@@ -1,7 +1,7 @@
 <h1>All Projects</h1>
 
 <% @projects.each do |proj| %>
-  <h3><%= proj.title %></h3>
+  <h3><%= link_to proj.title, project_url(proj) %></h3>
   <ul>
     <li><%= proj.description %></li>
   </ul>

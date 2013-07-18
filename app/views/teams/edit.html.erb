@@ -1,0 +1,10 @@
+<h1>Edit Team</h1>
+
+<form action="<%= team_url(@team) %>" method="post">
+  <label for="team_name">Name</label>
+  <input type="text" name="team[name]" id="team_name" value="<%= @team.name %>">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="put">
+  <br>
+  <input type="submit" value="Update">
+</form>

@@ -7,6 +7,14 @@
   <label for="project_description">Description</label>
   <br>
   <textarea name="project[description]" id="project_description" placeholder="Enter description" cols="50" rows="10"></textarea>
+  <br>
+  <label for="project_team">Team</label>
+  <br>
+  <select name="project[team_id]" id="project_team">
+    <% @teams.each do |team| %>
+      <option value="<%= team.id %>" <%= "selected" if @project.team = team %>><%= team.name %></option>
+    <% end %>
+  </select>
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <br>
   <input type="submit" value="Create">
