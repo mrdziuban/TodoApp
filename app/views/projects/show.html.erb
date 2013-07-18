@@ -3,15 +3,6 @@
 <p><%= @project.description %></p>
 
 
-<h4>Items:</h4>
-<ul>
-  <% @project.items.each do |item| %>
-    <%= link_to item.title, item_url(item) %>, <%= link_to "Edit", edit_item_url(item) %>
-    <ul>
-      <li><%= item.description %></li>
-      <li>Completed: <%= item.completed? ? "Yes" : "No" %></li>
-    </ul>
-  <% end %>
-</ul>
+<h4><%= link_to "Items", project_items_url(@project.id) %></h4>
 
 <%= link_to "Team", team_url(@project.team) %>

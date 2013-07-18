@@ -1,0 +1,11 @@
+<h1>Items for <%= @items.first.project.title %></h1>
+
+<ul>
+  <% @items.each do |item| %>
+    <%= link_to item.title, item_url(item) %>, <%= link_to "Edit", edit_item_url(item) %>
+    <ul>
+      <li><%= item.description %></li>
+      <li>Completed: <%= item.completed? ? "Yes" : "No" %></li>
+    </ul>
+  <% end %>
+</ul>

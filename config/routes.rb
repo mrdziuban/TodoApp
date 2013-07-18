@@ -1,6 +1,8 @@
 TodoApp::Application.routes.draw do
-  resources :projects
-  resources :items
+  resources :projects do
+    resources :items, only: [:index]
+  end
+  resources :items, except: [:index]
   resources :teams do
     resources :projects, only: [:new]
   end

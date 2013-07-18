@@ -2,6 +2,7 @@
 
 <% @projects.each do |proj| %>
   <h3><%= link_to proj.title, project_url(proj) %></h3>
+  Description:
   <ul>
     <li><%= proj.description %></li>
   </ul>
