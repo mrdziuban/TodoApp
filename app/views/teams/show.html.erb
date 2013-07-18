@@ -16,3 +16,6 @@
 
 <br>
 <%= link_to "New project", new_team_project_url(@team.id) %>
+<br>
+<%= link_to "Edit team", edit_team_url(@team) %>
+<%= button_to "Delete team", team_url(@team), method: :delete %>
