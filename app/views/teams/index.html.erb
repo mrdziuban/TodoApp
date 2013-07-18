@@ -3,3 +3,6 @@
 <% @teams.each do |team| %>
   <h3><%= link_to team.name, team_url(team) %></h3>
 <% end %>
+
+<br>
+<%= link_to "New team", new_team_url %>

@@ -1,5 +1,5 @@
 class Team < ActiveRecord::Base
-  attr_accessible :name
+  attr_accessible :name, :user_ids
 
   has_many :projects, dependent: :destroy
   has_many :team_memberships, dependent: :destroy

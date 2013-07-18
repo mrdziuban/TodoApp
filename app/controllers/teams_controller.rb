@@ -5,6 +5,7 @@ class TeamsController < ApplicationController
 
   def new
     @team = Team.new
+    @users = User.all
   end
 
   def create
@@ -23,6 +24,7 @@ class TeamsController < ApplicationController
 
   def edit
     @team = Team.find(params[:id])
+    @users = User.all
   end
 
   def update

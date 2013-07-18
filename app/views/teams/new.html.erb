@@ -3,6 +3,17 @@
 <form action="<%= teams_url %>" method="post">
   <label for="team_name">Name</label>
   <input type="text" name="team[name]" id="team_name" value="<%= @team.name %>">
+  <br>
+  <br>
+  <label for="team_members">Members</label>
+  <br>
+  <% User.all.each do |user| %>
+    <input type="checkbox" name="team[user_ids][]" value="<%= user.id %>" id="user_<%= user.name %>" <%= "checked" if @team.users.include?(user) %>>
+    <label for="user_<%= user.name %>"><%= user.name %></label>
+    <br>
+  <% end %>
+  <input type="hidden" name="team[user_ids][]" value="">
+
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <br>
   <input type="submit" value="Create">
