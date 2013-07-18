@@ -37,6 +37,11 @@ class ItemsController < ApplicationController
     end
   end
 
+  def batch_update
+    Item.update(params[:items].keys, params[:items].values)
+    redirect_to :back
+  end
+
   def destroy
     item = Item.find(params[:id])
     item.destroy

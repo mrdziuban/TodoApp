@@ -3,6 +3,7 @@ TodoApp::Application.routes.draw do
     resources :items, only: [:index]
   end
   resources :items, except: [:index]
+  match 'batch_update' => 'items#batch_update', via: :put
   resources :teams do
     resources :projects, only: [:new]
   end
