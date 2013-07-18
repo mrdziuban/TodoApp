@@ -1,0 +1,13 @@
+<h1>New Project</h1>
+
+<form action="<%= projects_url %>" method="post">
+  <label for="project_title">Title</label>
+  <input type="text" name="project[title]" id="project_title" value="<%= @project.title %>">
+  <br>
+  <label for="project_description">Description</label>
+  <br>
+  <textarea name="project[description]" id="project_description" placeholder="Enter description" cols="50" rows="10"></textarea>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <br>
+  <input type="submit" value="Create">
+</form>
