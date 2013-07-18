@@ -6,6 +6,9 @@ class ProjectsController < ApplicationController
   def new
     @project = Project.new
     @teams = Team.all
+    @team = Team.find(params[:team_id]) if params[:team_id]
+    p "TEAM IS"
+    p @team
   end
 
   def create
