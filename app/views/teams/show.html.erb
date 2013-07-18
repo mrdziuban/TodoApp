@@ -6,3 +6,10 @@
     <%= link_to proj.title, project_url(proj) %>
   <% end %>
 </ul>
+
+<h3>Members:</h3>
+<ul>
+  <% @team.users.each do |user| %>
+    <%= link_to user.name, user_url(user) %>
+  <% end %>
+</ul>
