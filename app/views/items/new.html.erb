@@ -1,0 +1,28 @@
+<h1>New Item</h1>
+
+<form action="<%= items_url %>" method="post">
+  <label for="item_title">Title</label>
+  <input type="text" name="item[title]" id="item_title" value="<%= @item.title %>">
+  <br>
+  <label for="item_description">Description</label>
+  <br>
+  <textarea name="item[description]" id="item_description" placeholder="Enter description" cols="50" rows="10"><%= @item.description %></textarea>
+  <br>
+  <label for="item_completed">Completed?</label>
+  <br>
+  <input type="radio" name="item[completed]" value="<%= true %>" id="item_completed_true" <%= "checked" if @item.completed? %>>
+  <label for="item_completed_true">Yes</label>
+  <br>
+  <input type="radio" name="item[completed]" value="<%= false %>" id="item_completed_false" <%= "checked" unless @item.completed? %>>
+  <label for="item_completed_false">No</label>
+  <br>
+  <label for="item_project">Project</label>
+  <select name="item[project_id]" id="item_project">
+    <% @projects.each do |proj| %>
+      <option value="<%= proj.id %>" <%= "selected" if @item.project_id == proj.id %>><%= proj.title %></option>
+    <% end %>
+  </select>
+  <br>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="submit" value="Create">
+</form>

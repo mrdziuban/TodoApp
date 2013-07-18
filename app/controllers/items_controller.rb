@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @projects = Project.all
   end
 
   def create
@@ -23,6 +24,7 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    @projects = Project.all
   end
 
   def update
